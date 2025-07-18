@@ -1,0 +1,45 @@
+name: 'coingecko_analytics'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'coingecko_analytics'
+
+# These configurations specify where dbt should look for different types of files.
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configuring models
+models:
+  coingecko_analytics:
+    # Configuration for staging models
+    staging:
+      +materialized: view
+    
+    # Configuration for intermediate models
+    intermediate:
+      +materialized: view
+    
+    # Configuration for marts (final analytics tables)
+    marts:
+      +materialized: table
+      
+# Global configurations
+vars:
+  # Start date for historical data processing
+  start_date: '2024-01-01'
+  
+  # Default number of days for moving averages
+  default_moving_average_days: 7
+  
+  # Minimum market cap for inclusion in analysis
+  min_market_cap: 1000000

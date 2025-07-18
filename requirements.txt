@@ -12,6 +12,7 @@ sqlalchemy==1.4.49
 
 # Data processing
 pandas==2.0.3
+numpy==1.26.4
 requests==2.31.0
 
 # Configuration

@@ -1,0 +1,26 @@
+coingecko_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: airflow
+      password: airflow
+      port: 5432
+      dbname: coingecko_db
+      schema: dbt_analytics
+      threads: 4
+      keepalives_idle: 0
+      search_path: "dbt_analytics,analytics,staging,raw_data,public"
+      
+    prod:
+      type: postgres
+      host: localhost
+      user: airflow
+      password: airflow
+      port: 5432
+      dbname: coingecko_db
+      schema: analytics
+      threads: 4
+      keepalives_idle: 0
+      search_path: "analytics,staging,raw_data,public"
