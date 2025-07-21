@@ -27,12 +27,3 @@ coingecko-etl/
 3. Install dependencies: `pip install -r requirements.txt`
 4. Start PostgreSQL: `docker-compose up -d postgres`
 5. Test connection: `python test_connection.py`
-
-## Development Status
-
-- [x] Phase 1: Project Setup ✅
-- [ ] Phase 2: Data Extraction
-- [ ] Phase 3: Database Schema
-- [ ] Phase 4: dbt Setup
-- [ ] Phase 5: Airflow Configuration
-- [ ] Phase 6: Testing & Validation
